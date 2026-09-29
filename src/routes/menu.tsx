@@ -1,31 +1,31 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MenuPage } from "@/components/menu/MenuPage";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/menu")({
   validateSearch: (search: Record<string, unknown>) => ({
     table: search.table ? String(search.table) : undefined,
   }),
   head: () => ({
     meta: [
-      { title: "The Urban Plate — Digital Table Menu" },
+      { title: "Menu — The Urban Plate" },
       {
         name: "description",
         content:
-          "Scan, browse and order from The Urban Plate's digital menu — starters, biryani, breads, desserts and more.",
+          "The full Urban Plate menu: starters, soups, main course, breads, biryani, Chinese, desserts and beverages.",
       },
-      { property: "og:title", content: "The Urban Plate — Digital Table Menu" },
+      { property: "og:title", content: "Menu — The Urban Plate" },
       {
         property: "og:description",
-        content: "Fresh • Local • Delicious. Browse our full menu and order right from your table.",
+        content: "Browse every dish and add favourites to your table order.",
       },
       { property: "og:type", content: "restaurant.menu" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Index,
+  component: MenuRoute,
 });
 
-function Index() {
+function MenuRoute() {
   const { table } = Route.useSearch();
   return <MenuPage table={table} />;
 }
