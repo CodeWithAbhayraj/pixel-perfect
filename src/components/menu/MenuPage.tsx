@@ -11,7 +11,7 @@ import { CartDrawer } from "./CartDrawer";
 import { BottomNavigation } from "./BottomNavigation";
 import { Footer } from "./Footer";
 
-export function MenuPage({ table }: { table?: string }) {
+export function MenuPage({ table }: { table?: string | undefined }) {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [selected, setSelected] = useState<MenuItem | null>(null);

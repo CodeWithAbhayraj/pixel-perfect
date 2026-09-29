@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MenuPage } from "@/components/menu/MenuPage";
 
 export const Route = createFileRoute("/menu")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    table: search.table ? String(search.table) : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): { table?: string } => {
+    const table = search["table"];
+    return table ? { table: String(table) } : {};
+  },
   head: () => ({
     meta: [
       { title: "Menu — The Urban Plate" },

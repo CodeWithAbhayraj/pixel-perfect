@@ -7,7 +7,7 @@ type Props = {
   open: boolean;
   lines: CartLine[];
   total: number;
-  table?: string;
+  table?: string | undefined;
   onClose: () => void;
   onIncrement: (id: number) => void;
   onDecrement: (id: number) => void;

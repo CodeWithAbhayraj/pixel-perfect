@@ -1,7 +1,7 @@
 import { Clock, MapPin, UtensilsCrossed } from "lucide-react";
 import { restaurant } from "@/data/menuData";
 
-export function RestaurantHeader({ table }: { table?: string }) {
+export function RestaurantHeader({ table }: { table?: string | undefined }) {
   return (
     <header className="fade-up bg-accent/50 px-4 pb-6 pt-8 sm:px-6">
       <div className="mx-auto max-w-5xl">
